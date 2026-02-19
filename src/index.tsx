@@ -13,6 +13,8 @@ const app = new Hono<{ Bindings: Env }>()
 // ===== 정적 파일 서빙 =====
 app.use('/static/*', serveStatic())
 app.use('/favicon.ico', serveStatic())
+app.use('/robots.txt', serveStatic())
+app.use('/sitemap.xml', serveStatic())
 
 // ===== API 라우트 =====
 app.route('/api', api)
