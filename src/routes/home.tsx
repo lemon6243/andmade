@@ -33,7 +33,7 @@ home.get('/', async (c) => {
       {/* ===== 히어로 섹션 ===== */}
       <section class="hero">
         <div class="hero-content">
-          <div class="hero-badge">✨ 서울 광진구 장안동 키즈공방</div>
+          <div class="hero-badge">✨ 서울 동대문구 장안동 키즈공방</div>
           <h1 class="hero-title">
             아이와 함께하는<br />
             <span class="highlight">특별한 만들기</span> 시간
@@ -161,46 +161,94 @@ home.get('/', async (c) => {
       </section>
 
       {/* ===== 인스타그램 섹션 ===== */}
-      <section class="section">
+      <section style="padding: 5rem 1.5rem; background: #ffffff;">
         <div class="container">
-          <div class="section-header fade-in">
-            <span class="section-tag">Instagram</span>
-            <h2 class="section-title">인스타그램 팔로우 📸</h2>
-            <p class="section-desc">
+          {/* 헤더 */}
+          <div style="text-align: center; margin-bottom: 3rem;">
+            <span style="display: inline-block; background: linear-gradient(135deg, #833ab4, #fd1d1d); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 1rem; border-radius: 999px; margin-bottom: 1rem; letter-spacing: 0.05em; text-transform: uppercase;">
+              <i class="fab fa-instagram" style="margin-right: 0.35rem;"></i>Instagram
+            </span>
+            <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--text-main); letter-spacing: -0.03em; margin-bottom: 0.875rem;">
+              인스타그램 팔로우 📸
+            </h2>
+            <p style="font-size: 1rem; color: var(--text-sub); line-height: 1.8;">
               @and._.made 를 팔로우하고 최신 작품 소식을 받아보세요!
             </p>
           </div>
-          <div style="max-width: 680px; margin: 0 auto;">
-            {/* 인스타그램 임베드 */}
-            <div style="background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); border-radius: 24px; padding: 2.5rem; text-align: center; color: white; box-shadow: 0 8px 32px rgba(131,58,180,0.3);">
-              <div style="font-size: 4rem; margin-bottom: 1rem;">📸</div>
-              <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">@and._.made</h3>
-              <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 2rem; line-height: 1.7;">
-                매일 새로운 작품 사진과 수업 후기를<br />
-                인스타그램에서 공유하고 있어요!
-              </p>
-              <div style="display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                <div style="text-align: center;">
-                  <div style="font-size: 1.5rem; font-weight: 700;">1.2K+</div>
-                  <div style="font-size: 0.8rem; opacity: 0.8;">팔로워</div>
+
+          {/* 인스타그램 카드 */}
+          <div style="max-width: 820px; margin: 0 auto;">
+            <div style="background: white; border-radius: 28px; overflow: hidden; box-shadow: 0 8px 40px rgba(131,58,180,0.18);">
+              {/* 프로필 헤더 */}
+              <div style="background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); padding: 2.5rem 2rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; flex-shrink: 0; box-shadow: 0 4px 16px rgba(0,0,0,0.2);">
+                  🎨
+                </div>
+                <div style="flex: 1;">
+                  <div style="color: white; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.25rem;">@and._.made</div>
+                  <div style="color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 1rem;">앤드메이드 AND MADE 🌸 서울 동대문구 키즈공방</div>
+                  <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                      <div style="color: white; font-size: 1.2rem; font-weight: 700;">200+</div>
+                      <div style="color: rgba(255,255,255,0.8); font-size: 0.78rem;">게시물</div>
+                    </div>
+                    <div style="text-align: center;">
+                      <div style="color: white; font-size: 1.2rem; font-weight: 700;">1.2K+</div>
+                      <div style="color: rgba(255,255,255,0.8); font-size: 0.78rem;">팔로워</div>
+                    </div>
+                    <div style="text-align: center;">
+                      <div style="color: white; font-size: 1.2rem; font-weight: 700;">💕</div>
+                      <div style="color: rgba(255,255,255,0.8); font-size: 0.78rem;">높은 인기</div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href="https://www.instagram.com/and._.made"
+                  target="_blank"
+                  style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #833ab4; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 0.9375rem; box-shadow: 0 4px 16px rgba(0,0,0,0.15); white-space: nowrap; flex-shrink: 0;"
+                >
+                  <i class="fab fa-instagram"></i>
+                  팔로우하기
+                </a>
+              </div>
+
+              {/* 미리보기 그리드 — 이모지/색상 타일로 대체 */}
+              <div style="padding: 1.5rem 2rem 2rem;">
+                <p style="font-size: 0.82rem; color: var(--text-sub); margin-bottom: 1rem; font-weight: 600;">
+                  <i class="fas fa-images" style="color: #833ab4; margin-right: 0.35rem;"></i>최근 작품들
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1.5rem;">
+                  {[
+                    { bg: 'linear-gradient(135deg, #FFB5C8, #FF8FAB)', emoji: '🏺', label: '클레이공예' },
+                    { bg: 'linear-gradient(135deg, #B5E8E0, #7ecdc4)', emoji: '🏠', label: '미니어처' },
+                    { bg: 'linear-gradient(135deg, #D4B8E0, #b57bcf)', emoji: '💎', label: '데코덴' },
+                    { bg: 'linear-gradient(135deg, #FFE8A3, #f5c842)', emoji: '✨', label: 'UV레진' },
+                    { bg: 'linear-gradient(135deg, #FFD4B2, #ffb380)', emoji: '🌈', label: '키즈스페셜' },
+                    { bg: 'linear-gradient(135deg, #fce4ec, #f48fb1)', emoji: '👑', label: '프라이빗' },
+                  ].map((item) => (
+                    <a
+                      href="https://www.instagram.com/and._.made"
+                      target="_blank"
+                      style={`aspect-ratio: 1; border-radius: 12px; background: ${item.bg}; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; gap: 0.4rem; transition: transform 0.2s; cursor: pointer;`}
+                      onmouseover="this.style.transform='scale(1.04)'"
+                      onmouseout="this.style.transform=''"
+                    >
+                      <span style="font-size: clamp(1.5rem, 4vw, 2.2rem);">{item.emoji}</span>
+                      <span style="font-size: 0.72rem; color: rgba(61,48,67,0.8); font-weight: 600;">{item.label}</span>
+                    </a>
+                  ))}
                 </div>
                 <div style="text-align: center;">
-                  <div style="font-size: 1.5rem; font-weight: 700;">200+</div>
-                  <div style="font-size: 0.8rem; opacity: 0.8;">게시물</div>
-                </div>
-                <div style="text-align: center;">
-                  <div style="font-size: 1.5rem; font-weight: 700;">💕</div>
-                  <div style="font-size: 0.8rem; opacity: 0.8;">높은 인기</div>
+                  <a
+                    href="https://www.instagram.com/and._.made"
+                    target="_blank"
+                    style="display: inline-flex; align-items: center; gap: 0.625rem; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: white; padding: 0.875rem 2.5rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 20px rgba(131,58,180,0.4);"
+                  >
+                    <i class="fab fa-instagram"></i>
+                    인스타그램에서 모든 작품 보기
+                  </a>
                 </div>
               </div>
-              <a
-                href="https://www.instagram.com/and._.made"
-                target="_blank"
-                style="display: inline-flex; align-items: center; gap: 0.5rem; background: white; color: #833ab4; padding: 0.875rem 2rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.2);"
-              >
-                <i class="fab fa-instagram"></i>
-                인스타그램 팔로우하기
-              </a>
             </div>
           </div>
         </div>
