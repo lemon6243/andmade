@@ -63,8 +63,9 @@ INSERT OR IGNORE INTO posts (title, content, category) VALUES
   ('앤드메이드 오픈 안내', '안녕하세요! 서울 장안동 키즈공방 앤드메이드입니다. 아이들과 함께 즐거운 만들기 시간을 가져보세요!', 'notice'),
   ('봄 시즌 특별 클래스 오픈', '2024년 봄을 맞아 새로운 클레이 공예 클래스를 오픈합니다. 많은 참여 부탁드립니다!', 'notice');
 
--- 샘플 유튜브 영상
+-- 실제 @andmade 채널 유튜브 영상
 INSERT OR IGNORE INTO youtube_videos (title, video_id, description, class_type, thumbnail_url) VALUES
-  ('클레이 케이크 만들기', 'dQw4w9WgXcQ', '귀여운 미니어처 클레이 케이크 만들기 영상', 'clay', ''),
-  ('데코덴 폰케이스 만들기', 'dQw4w9WgXcQ', '달콤한 디저트 장식 폰케이스 DIY', 'decoden', ''),
-  ('미니어처 음식 만들기', 'dQw4w9WgXcQ', '손바닥 크기 미니어처 음식 클레이 작품', 'miniature', '');
+  ('미니어처 떡국 한 상 차림', '3mJO0Di9usI', '앤드메이드 미니어처 떡국 한 상 만들기', 'miniature', ''),
+  ('사장님~ 여기 솜사탕 하나 주세요!', 'LojCAHwizmE', '앤드메이드 미니어처 솜사탕 만들기', 'miniature', ''),
+  ('누구나 쉽게 하는 백드롭페인팅', '7_i6OrP186M', '앤드메이드 클레이 백드롭페인팅 클래스', 'clay', ''),
+  ('멍때리고 보게 되는 클레이 장미 만들기', 'rUe_7JlkESc', '앤드메이드 클레이 장미 만들기', 'clay', '');
