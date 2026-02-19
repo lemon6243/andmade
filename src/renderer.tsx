@@ -14,6 +14,9 @@ export const Layout = ({ children, title = '앤드메이드 AND MADE - 서울 �
         <meta property="og:title" content="앤드메이드 AND MADE - 서울 장안동 키즈공방" />
         <meta property="og:description" content="클레이공예, 미니어처, 데코덴 수업. 아이들과 함께하는 특별한 만들기 시간!" />
         <meta name="theme-color" content="#FFB5C8" />
+        {/* 검색엔진 인증 */}
+        <meta name="naver-site-verification" content="b2f199085703962a2166c85ab009121f9f7fee1e" />
+        <meta name="google-site-verification" content="pvVn9iKvh_r42d3dO0k8I74OX3Gqd20-FhPskTWEx4g" />
         <title>{title}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
