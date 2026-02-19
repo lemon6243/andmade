@@ -19,11 +19,12 @@ home.get('/', async (c) => {
     // DB가 없어도 페이지는 표시
   }
 
-  // 유튜브 채널 쇼츠 (수동 등록된 영상 또는 기본 쇼츠)
+  // 유튜브 채널 쇼츠 - 실제 @andmade 채널 영상
   const defaultVideos = [
-    { video_id: 'u2gfHIkGpSk', title: '클레이 케이크 만들기' },
-    { video_id: 'TLl-Ah5gUZM', title: '미니어처 디저트 만들기' },
-    { video_id: 'VDt-5yOkKLI', title: '데코덴 폰케이스 만들기' },
+    { video_id: '3mJO0Di9usI', title: '미니어처 떡국 한 상 차림 ❤️', class_type: 'miniature' },
+    { video_id: 'LojCAHwizmE', title: '사장님~ 여기 솜사탕 하나 주세요!', class_type: 'miniature' },
+    { video_id: '7_i6OrP186M', title: '누구나 쉽게 하는 백드롭페인팅 ❤️', class_type: 'clay' },
+    { video_id: 'rUe_7JlkESc', title: '멍때리고 보게 되는 클레이 장미 만들기', class_type: 'clay' },
   ]
   const displayVideos = videos.length > 0 ? videos : defaultVideos
 
@@ -234,24 +235,36 @@ home.get('/', async (c) => {
           <div class="section-header fade-in">
             <span class="section-tag">Location</span>
             <h2 class="section-title">찾아오시는 길 📍</h2>
-            <p class="section-desc">서울 광진구 장안동에 위치해 있습니다.</p>
+            <p class="section-desc">서울 동대문구 장한로26가길 112에 위치해 있습니다.</p>
           </div>
 
           <div class="map-wrapper fade-in">
             <iframe
-              src="https://map.naver.com/p/entry/place/1265019088?placePath=%2Fhome&searchType=place&lng=127.0617&lat=37.5703&c=15,0,0,0,dh"
+              src="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC%20%EC%9E%A5%ED%95%9C%EB%A1%9C26%EA%B0%80%EA%B8%B8%20112%20%EC%95%A4%EB%93%9C%EB%A9%94%EC%9D%B4%EB%93%9C?c=15.00,0,0,0,dh"
               allowfullscreen=""
               loading="lazy"
-              title="앤드메이드 위치"
+              title="앤드메이드 위치 - 서울 동대문구 장한로26가길 112"
             ></iframe>
+          </div>
+
+          {/* 네이버 플레이스 바로가기 버튼 */}
+          <div style="text-align: center; margin: 1.5rem 0;">
+            <a
+              href="https://naver.me/5S9Q8opQ"
+              target="_blank"
+              style="display: inline-flex; align-items: center; gap: 0.5rem; background: #03C75A; color: white; padding: 0.75rem 1.75rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 0.9375rem; box-shadow: 0 4px 16px rgba(3,199,90,0.35);"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+              네이버 플레이스에서 보기
+            </a>
           </div>
 
           <div class="location-info-grid">
             {[
-              { icon: '📍', title: '주소', text: '서울 광진구 장안동\n(네이버 지도: 앤드메이드 검색)' },
-              { icon: '🕐', title: '운영시간', text: '화~일 11:00 - 19:00\n월요일 휴무' },
+              { icon: '📍', title: '주소', text: '서울특별시 동대문구\n장한로26가길 112 앤드메이드' },
+              { icon: '🕐', title: '운영시간', text: '매일 09:00 - 19:00\n(연중무휴 · 예약제 운영)' },
               { icon: '💬', title: '카카오톡 채널', text: '앤드메이드 (ID: andmade)\n빠른 상담 가능!' },
-              { icon: '📞', title: '전화 예약', text: '인스타 또는 카카오채널로\n문의해 주세요' }
+              { icon: '📞', title: '예약 문의', text: '인스타그램 @and._.made\n또는 카카오채널로 문의' }
             ].map((item) => (
               <div class="location-info-card fade-in">
                 <span class="location-icon">{item.icon}</span>

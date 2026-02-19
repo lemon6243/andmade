@@ -86,15 +86,15 @@ export const Layout = ({ children, title = '앤드메이드 AND MADE - 서울 �
             <div>
               <h4 class="footer-col-title">연락처</h4>
               <ul class="footer-links">
-                <li><a href="#">📍 서울 광진구 장안동</a></li>
+                <li><a href="#">📍 서울 동대문구 장한로26가길 112</a></li>
                 <li><a href="tel:010-0000-0000">📞 예약 문의</a></li>
                 <li><a href="https://pf.kakao.com/_andmade" target="_blank">💬 카카오채널: andmade</a></li>
-                <li><a href="#">🕐 화~일 11:00-19:00</a></li>
+                <li><a href="#">🕐 매일 09:00-19:00 (예약제)</a></li>
               </ul>
             </div>
           </div>
           <div class="footer-bottom">
-            <p>© 2024 앤드메이드(AND MADE). All rights reserved. | 서울 광진구 장안동</p>
+            <p>© 2024 앤드메이드(AND MADE). All rights reserved. | 서울 동대문구 장한로26가길 112</p>
           </div>
         </footer>
 

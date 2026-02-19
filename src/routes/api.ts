@@ -7,6 +7,7 @@ import {
   getPosts, createPost, updatePost, deletePost,
   getGallery, addGalleryItem, deleteGalleryItem,
   getVideos, addVideo, deleteVideo,
+  getClassSettings, upsertClassSetting,
   initDB
 } from '../lib/db'
 
@@ -247,6 +248,37 @@ api.get('/videos', async (c) => {
     return c.json({ success: true, videos })
   } catch (error) {
     return c.json({ success: false, videos: [] })
+  }
+})
+
+// GET /api/class-settings - 공개 클래스 설정 조회
+api.get('/class-settings', async (c) => {
+  try {
+    await initDB(c.env.DB)
+    const settings = await getClassSettings(c.env.DB)
+    return c.json({ success: true, settings })
+  } catch (error) {
+    return c.json({ success: false, settings: [] })
+  }
+})
+
+// POST /api/admin/class-settings - 클래스 설정 저장
+api.post('/admin/class-settings', async (c) => {
+  if (!isAdmin(c)) return c.json({ success: false, message: '인증이 필요합니다.' }, 401)
+  try {
+    await initDB(c.env.DB)
+    const body = await c.req.json()
+    const { class_id, price, duration, age, max_participants, desc } = body
+    if (!class_id || !price) return c.json({ success: false, message: 'class_id와 price는 필수입니다.' }, 400)
+    await upsertClassSetting(c.env.DB, {
+      class_id: String(class_id), price: String(price),
+      duration: String(duration || ''), age: String(age || ''),
+      max_participants: String(max_participants || ''),
+      desc: String(desc || '')
+    })
+    return c.json({ success: true })
+  } catch (error) {
+    return c.json({ success: false, message: '처리 중 오류가 발생했습니다.' }, 500)
   }
 })
 

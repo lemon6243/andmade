@@ -54,9 +54,9 @@ CREATE TABLE IF NOT EXISTS youtube_videos (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- 기본 관리자 계정 (비밀번호: andmade2024)
+-- 기본 관리자 계정 (로그인 후 반드시 비밀번호를 변경해주세요)
 INSERT OR IGNORE INTO admins (username, password_hash) VALUES 
-  ('admin', '$2a$10$andmade2024hashedpassword');
+  ('admin', 'andmade2024');
 
 -- 샘플 게시글
 INSERT OR IGNORE INTO posts (title, content, category) VALUES 

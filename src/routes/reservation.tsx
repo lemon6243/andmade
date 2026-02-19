@@ -15,10 +15,17 @@ const CLASS_TYPES = [
 ]
 
 const TIME_SLOTS = [
-  '11:00', '11:30', '12:00', '12:30',
-  '13:00', '13:30', '14:00', '14:30',
-  '15:00', '15:30', '16:00', '16:30',
-  '17:00', '17:30', '18:00'
+  '09:00', '09:30',
+  '10:00', '10:30',
+  '11:00', '11:30',
+  '12:00', '12:30',
+  '13:00', '13:30',
+  '14:00', '14:30',
+  '15:00', '15:30',
+  '16:00', '16:30',
+  '17:00', '17:30',
+  '18:00', '18:30',
+  '19:00'
 ]
 
 reservation.get('/', async (c) => {
@@ -48,7 +55,7 @@ reservation.get('/', async (c) => {
                 <span class="reservation-info-icon">📍</span>
                 <div class="reservation-info-text">
                   <h4>위치</h4>
-                  <p>서울 광진구 장안동<br />(네이버: 앤드메이드 검색)</p>
+                  <p>서울특별시 동대문구<br />장한로26가길 112 앤드메이드</p>
                 </div>
               </div>
 
@@ -56,7 +63,7 @@ reservation.get('/', async (c) => {
                 <span class="reservation-info-icon">🕐</span>
                 <div class="reservation-info-text">
                   <h4>운영 시간</h4>
-                  <p>화~일 11:00 - 19:00<br />월요일 정기 휴무</p>
+                  <p>매일 09:00 - 19:00<br />(연중무휴 · 예약제 운영)</p>
                 </div>
               </div>
 
@@ -178,7 +185,7 @@ reservation.get('/', async (c) => {
                         class="form-control"
                         required
                       />
-                      <p class="form-hint">월요일은 휴무입니다</p>
+                      <p class="form-hint">매일 09:00~19:00 예약제 운영</p>
                     </div>
                     <div class="form-group">
                       <label class="form-label">
