@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { Layout } from '../renderer'
 import type { Env } from '../lib/db'
-import { getVideos, initDB } from '../lib/db'
+import { getVideos, getClassSettings, initDB } from '../lib/db'
 
 const classes = new Hono<{ Bindings: Env }>()
 
@@ -106,10 +106,33 @@ const CLASS_DATA = [
 
 classes.get('/', async (c) => {
   let videos: any[] = []
+  let classSettings: any[] = []
   try {
     await initDB(c.env.DB)
     videos = await getVideos(c.env.DB) as any[]
+    classSettings = await getClassSettings(c.env.DB) as any[]
   } catch (e) { }
+
+  // DB의 class_settings 값을 CLASS_DATA에 덮어쓰기 (DB에 값이 있는 항목만)
+  const settingsMap: { [key: string]: any } = {}
+  classSettings.forEach((s: any) => {
+    settingsMap[s.class_id] = s
+  })
+
+  const mergedClasses = CLASS_DATA.map((cls) => {
+    const dbSetting = settingsMap[cls.id]
+    if (dbSetting) {
+      return {
+        ...cls,
+        price: dbSetting.price ? Number(dbSetting.price).toLocaleString() : cls.price,
+        duration: dbSetting.duration || cls.duration,
+        age: dbSetting.age || cls.age,
+        maxParticipants: dbSetting.max_participants ? dbSetting.max_participants + '명' : cls.maxParticipants,
+        desc: dbSetting.description || cls.desc,
+      }
+    }
+    return cls
+  })
 
   // 클래스별 영상 매핑
   const videosByClass: { [key: string]: any[] } = {}
@@ -136,7 +159,7 @@ classes.get('/', async (c) => {
       <section class="section">
         <div class="container">
           <div class="classes-grid">
-            {CLASS_DATA.map((cls) => {
+            {mergedClasses.map((cls) => {
               const clsVideos = videosByClass[cls.id] || []
               return (
                 <div class="class-card fade-in" id={cls.id}>
